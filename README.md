@@ -58,14 +58,23 @@ More to come
 ---
 
 ## Project Structure
-├── dags/                  # Airflow DAGs
-├── docker/                # Docker Compose files
-│   └── docker-compose.yml
-├── data/                  # Sample travel data
-├── sql/                   # SQL scripts (schema, views)
-│   └── create_schema.sql
-├── notebooks/             # (Optional) Data exploration notebooks
-├── requirements.txt       # Python dependencies
-├── README.md              # Project overview
-└── .gitignore             # Ignored files and folders
+travel-recommendation-engine/
+│
+├── dags/ # Airflow DAGs
+│
+├── docker/ # Docker Compose files
+│ └── docker-compose.yml
+│
+├── data/ # Sample travel data
+│
+├── sql/ # SQL scripts (schema, views)
+│ └── create_schema.sql
+│
+├── notebooks/ # (Optional) Data exploration notebooks
+│
+├── requirements.txt # Python dependencies
+│
+├── README.md # Project overview
+│
+└── .gitignore # Ignored files and folders
 
