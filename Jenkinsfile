@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'python:3.10'
+      args '-v /var/run/docker.sock:/var/run/docker.sock' // This mounts the Docker socket for Compose
+    }
+  }
 
   stages {
     stage('Install Dependencies') {
@@ -12,7 +17,6 @@ pipeline {
     stage('Lint or Test DAGs') {
       steps {
         echo 'Linting or testing Airflow DAGs...'
-        // Add test or lint commands here, for example:
         sh 'pytest dags/ || echo "No tests found or pytest not installed"'
       }
     }
@@ -20,7 +24,7 @@ pipeline {
     stage('Deploy Backend Containers') {
       steps {
         echo 'Deploying backend services with Docker Compose...'
-        sh 'docker-compose -f docker/docker-compose.yml up -d --build'
+        sh 'docker-compose -f docker/docker-compose-psql.yml up -d --build'
       }
     }
   }
