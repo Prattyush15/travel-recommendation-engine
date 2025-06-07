@@ -7,6 +7,13 @@ pipeline {
   }
 
   stages {
+    stage('Initialize Workspace') {
+        steps {
+            echo 'Initializing workspace...'
+            checkout scm
+        }
+    }
+
     stage('Install Dependencies') {
       steps {
         echo 'Installing Python dependencies...'
