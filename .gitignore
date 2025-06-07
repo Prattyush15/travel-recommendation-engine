@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.venv/
+env/
+venv/
+ENV/
+
+# Data
+*.csv
+*.json
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Airflow logs
+logs/
+
+# Docker
+*.pid
