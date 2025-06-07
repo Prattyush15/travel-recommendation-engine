@@ -1,17 +1,12 @@
 pipeline {
-  agent {
-    docker {
-      image 'python:3.10'
-      args '-v /var/run/docker.sock:/var/run/docker.sock' // This mounts the Docker socket for Compose
-    }
-  }
+  agent any
 
   stages {
     stage('Initialize Workspace') {
-        steps {
-            echo 'Initializing workspace...'
-            checkout scm
-        }
+      steps {
+        echo 'Initializing workspace...'
+        checkout scm
+      }
     }
 
     stage('Install Dependencies') {
